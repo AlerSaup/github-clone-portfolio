@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Admin kullanıcı tablosu
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Proje tablosu
+model Project {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  name             String
+  description      String
+  shortDescription String
+  downloadUrl      String?  // Proje zip dosyası URL'si
+  lastUpdated      DateTime @default(now())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // İlişkiler
+  owner     Owner?
+  languages Language[]
+  tags      Tag[]
+  images    Image[]
+  files     File[]
+}
+
+// Proje sahibi bilgileri
+model Owner {
+  id        String  @id @default(cuid())
+  name      String
+  avatar    String  @default("")
+  github    String  @default("")
+  bio       String  @default("")
+  projectId String  @unique
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// Dil/Teknoloji
+model Language {
+  id         String  @id @default(cuid())
+  name       String
+  percentage Float
+  color      String
+  projectId  String
+  project    Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// Etiketler
+model Tag {
+  id        String  @id @default(cuid())
+  name      String
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// Proje görselleri
+model Image {
+  id        String  @id @default(cuid())
+  src       String
+  alt       String
+  order     Int     @default(0)
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+// Proje dosyaları (ağaç yapısı)
+model File {
+  id        String  @id @default(cuid())
+  name      String
+  type      String  // "file" veya "folder"
+  size      String?
+  language  String?
+  order     Int     @default(0)
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  parentId  String?
+  parent    File?   @relation("FileTree", fields: [parentId], references: [id], onDelete: Cascade)
+  children  File[]  @relation("FileTree")
+}
