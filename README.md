@@ -90,7 +90,7 @@ portfolio/
 ### 1. Repoyu klonlayın
 
 ```bash
-git clone https://github.com/KULLANICI_ADINIZ/portfolio.git
+git clone https://github.com/AlerSaup/github-clone-portfolio.git
 cd portfolio
 ```
 
@@ -185,3 +185,13 @@ Project        ─ Projeler (ana tablo)
 | `GET` | `/api/auth/me` | Oturum kontrolü |
 
 > 🔒 = Admin kimlik doğrulaması gerekli
+
+## 📝 Lisans
+
+MIT
+
+---
+
+<p align="center">
+  <sub>Next.js + Prisma + PostgreSQL ile geliştirildi</sub>
+</p>
