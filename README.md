@@ -185,13 +185,3 @@ Project        ─ Projeler (ana tablo)
 | `GET` | `/api/auth/me` | Oturum kontrolü |
 
 > 🔒 = Admin kimlik doğrulaması gerekli
-
-## 📝 Lisans
-
-MIT
-
----
-
-<p align="center">
-  <sub>Next.js + Prisma + PostgreSQL ile geliştirildi</sub>
-</p>
