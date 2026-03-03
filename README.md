@@ -2,12 +2,13 @@
 
 Kişisel proje portföy sitesi. Projelerinizi görseller, dosya yapısı ve indirme linki ile sergileyin.
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38bdf8?logo=tailwindcss)
-![Prisma](https://img.shields.io/badge/Prisma-7-2d3748?logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791?logo=postgresql)
-
+![portfolyo1](https://i.imgur.com/iVJ3NPO.png)
+![portfolyo2](https://i.imgur.com/xQMrw1m.png)
+![portfolyo3](https://i.imgur.com/A488Tw8.png)
+![portfolyo4](https://i.imgur.com/Izkx3gO.png)
+![portfolyo5](https://i.imgur.com/KhsC1OC.png)
+![portfolyo6](https://i.imgur.com/tUfnlL3.png)
+![portfolyo7](https://i.imgur.com/rreBEer.png)
 ## ✨ Özellikler
 
 - **Proje Vitrini** — Projelerinizi kart görünümünde listeleyin
@@ -184,13 +185,3 @@ Project        ─ Projeler (ana tablo)
 | `GET` | `/api/auth/me` | Oturum kontrolü |
 
 > 🔒 = Admin kimlik doğrulaması gerekli
-
-## 📝 Lisans
-
-MIT
-
----
-
-<p align="center">
-  <sub>Next.js + Prisma + PostgreSQL ile geliştirildi</sub>
-</p>
